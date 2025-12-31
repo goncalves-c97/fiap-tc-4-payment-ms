@@ -1,0 +1,63 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5227"
+    },
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "API_AUTHENTICATION_KEY": "Yf29qN58VfWbT1YtZz7jRkE4sLt9xP2eUqK3LmXvHsDcMgAjBwNvZxQrFtGvKyLz",
+        "DB_CONNECTION_STRING": "Server=localhost\\SQLEXPRESS;user=local_sa;password=1234;Trusted_Connection=True;TrustServerCertificate=True",
+        "DB_NAME": "PaymentDb",
+        "ORDER_MS_URL": "https://localhost:8082",
+        "APP_SETTINGS__AppUrl": "https://localhost:8083",
+        "PAYMENT_SETTINGS__SponsorId": "662208785",
+        "PAYMENT_SETTINGS__BaseUrl": "https://api.mercadopago.com",
+        "PAYMENT_SETTINGS__PaymentController": "instore/orders/qr/seller/collectors",
+        "PAYMENT_SETTINGS__UserId": "2439756402",
+        "PAYMENT_SETTINGS__ExternalPosId": "SUC001POS001",
+        "PAYMENT_SETTINGS__Token": "APP_USR-5348444362605432-051315-09269985b96678460c4867c15140cf55-2439756402"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:8083"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_HTTPS_PORTS": "8081",
+        "ASPNETCORE_HTTP_PORTS": "8080"
+      },
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:9788",
+      "sslPort": 44367
+    }
+  }
+}
