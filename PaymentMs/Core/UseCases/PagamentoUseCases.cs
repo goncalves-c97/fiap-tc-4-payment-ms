@@ -61,6 +61,7 @@ namespace Core.UseCases
         {
             Pagamento pagamento = new()
             {
+                IdPedido = idPedido,
                 IdGatewayPagamento = (int)GatewayPagamentoEnum.MercadoPago,
                 Valor = valor,
                 IdStatusPagamento = (int)StatusPagamentoEnum.Pendente,

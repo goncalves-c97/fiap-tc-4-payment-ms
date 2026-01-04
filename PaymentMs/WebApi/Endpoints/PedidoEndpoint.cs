@@ -30,7 +30,7 @@ namespace WebApi.Endpoints
             return Ok(await PagamentoController.GetAllPagamentos(_dbConnection, status));
         }
 
-        [Authorize(Roles = UsuarioRoles.Administrador)]
+        [Authorize]
         [HttpGet, Route("GetById")]
         public async Task<IActionResult> GetById([FromQuery] int idPedido)
         {

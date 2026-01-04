@@ -16,6 +16,7 @@ namespace Core.Gateways
                 _tableName,
                 new Dictionary<string, object>
                 {
+                    { "id_pedido", pagamento.IdPedido },
                     { "id_gateway_pagamento", pagamento.IdGatewayPagamento },
                     { "valor", pagamento.Valor },
                     { "id_status_pagamento", pagamento.IdStatusPagamento},
@@ -49,7 +50,6 @@ namespace Core.Gateways
 
         public async Task<Pagamento?> GetByPedidoId(int idPedido)
         {
-            Continuar a partir daqui
             return await _dbConnection.SearchFirstOrDefaultByParametersAsync<Pagamento>(
                 _tableName,
                 "id_pedido = @Id",
