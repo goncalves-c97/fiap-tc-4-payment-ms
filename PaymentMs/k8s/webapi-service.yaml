@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapi-service
+  name: payment-ms-webapi-service
+  namespace: payment-ms
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
-    app: webapi
+    app: payment-ms-webapi
   ports:
   - protocol: TCP
-    port: 8085
+    port: 8083
     targetPort: 5000
-    nodePort: 30085
