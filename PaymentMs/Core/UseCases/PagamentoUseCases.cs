@@ -39,7 +39,7 @@ namespace Core.UseCases
                 PedidoId = idPedido.ToString(),
                 TituloPedido = $"PEDIDO #{idPedido}",
                 Description = "Pedido FastFoodChallenge",
-                UrlNotificacao = $"https://www.google.com.br/Webhook/Pagamento?origem=MercadoPago&identificador={idPedido}", //TODO: Fix route {appSettings.Value.AppUrl}
+                UrlNotificacao = $"{appSettings.Value.AppUrl}/Webhook/Pagamento?origem=MercadoPago&identificador={idPedido}", //TODO: Fix route {appSettings.Value.AppUrl}
                 DataHoraExpiracaoPagamento = DateTime.Now.AddMinutes(10),
                 ValorTotal = valorPedido / 100m // Converte centavos para reais
             };
