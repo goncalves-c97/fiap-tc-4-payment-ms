@@ -5,7 +5,7 @@ public partial class Pagamento
     public int IdPagamento { get; set; }
 
     public int IdPedido { get; set; }
-    
+
     public int IdGatewayPagamento { get; set; }
 
     public decimal Valor { get; set; }

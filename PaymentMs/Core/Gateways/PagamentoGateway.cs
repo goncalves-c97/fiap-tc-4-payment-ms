@@ -44,7 +44,7 @@ namespace Core.Gateways
                 { "valor", pagamento.Valor },
                 { "id_status_pagamento", pagamento.IdStatusPagamento },
                 { "data_hora_pago", pagamento.DataHoraPago }
-            },   "id_pagamento = @Id",
+            }, "id_pagamento = @Id",
                 new { Id = pagamento.IdPagamento });
         }
 

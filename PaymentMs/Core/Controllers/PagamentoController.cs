@@ -32,7 +32,7 @@ namespace Core.Controllers
 
             return await PagamentoUseCases.CreatePagamentoAndGetQrCodePagamento(appSettings, pagamentoGateway, pagamentoService, orderMsGateway, idPedido, valorPedido, token);
         }
-    
+
         public static async Task InformaPagamentoPedidoAprovado(IDbConnection dbConnection, IOptions<AppSettings> appSettings, int idPedido)
         {
             PagamentoGateway pagamentoGateway = new(dbConnection);

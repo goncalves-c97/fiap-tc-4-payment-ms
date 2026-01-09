@@ -40,7 +40,7 @@ namespace Infra.Payment.MercadoPago
 
             if (!response.IsSuccessStatusCode)
                 throw new Exception(responseContent);
-            
+
             // Deserialize the response JSON into your object
 
             QrCodeResponse qrCodeResponse = JsonConvert.DeserializeObject<QrCodeResponse>(responseContent)!;

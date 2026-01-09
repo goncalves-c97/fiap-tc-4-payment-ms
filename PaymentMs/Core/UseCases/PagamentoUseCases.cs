@@ -17,7 +17,7 @@ namespace Core.UseCases
         {
             if (pagamentoGateway == null)
                 throw new ArgumentNullException(nameof(pagamentoGateway), "O gateway de pagamento não pode ser nulo.");
-            
+
             return await pagamentoGateway.GetAllPagamentos(status);
         }
         public static async Task<QrCodePagamentoDto> GetQrCodePagamento(IPagamentoService pagamentoService, PedidoPagamentoDto pedidoDto)
@@ -145,6 +145,6 @@ namespace Core.UseCases
                 ?? throw new KeyNotFoundException($"Pagamento com ID de pedido {idPedido} não encontrado.");
 
             return pagamento;
-        }        
+        }
     }
 }

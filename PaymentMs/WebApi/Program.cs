@@ -153,7 +153,8 @@ builder.Services.AddHttpClient<IOrderMsGateway, OrderMsGateway>(client =>
 
 builder.Services.Configure<PaymentSettingsDto>(builder.Configuration.GetSection("PAYMENT_SETTINGS"));
 
-builder.Services.AddScoped<IPagamentoService>(provider => {
+builder.Services.AddScoped<IPagamentoService>(provider =>
+{
     var settings = provider.GetRequiredService<IOptions<PaymentSettingsDto>>().Value;
     Console.WriteLine(JsonConvert.SerializeObject(settings, Formatting.Indented));
     return new PagamentoService(settings);
@@ -182,3 +183,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// Expose Program to integration tests (WebApplicationFactory)
+public partial class Program { }
