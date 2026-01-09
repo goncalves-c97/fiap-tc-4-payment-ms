@@ -7,12 +7,6 @@ namespace Core.Controllers
 {
     public static class NotificacaoWebhookController
     {
-        public static async Task SetWebhookBaseUrl(IDbConnection dbConnection, string url)
-        {
-            UrlWebhookGateway gateway = new(dbConnection);
-            await gateway.InsertUpdateUrl(url);
-        }
-
         public static async Task AddNewNotification(IDbConnection dbConnection, IPagamentoService pagamentoService, string origem, int identificador, object dadoRecebido)
         {
             NotificacaoWebhookGateway gateway = new(dbConnection);
